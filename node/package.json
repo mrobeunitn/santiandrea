@@ -1,0 +1,28 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "santiandrea project",
+  "main": "index.js",
+  "dependencies": {
+    "bind": "^0.1.7",
+    "async": "^2.4.1",
+    "express": "^4.15.3",
+    "pg": "^6.2.4",
+    "pg-promise": "^5.9.2",
+    "photoswipe": "^4.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrobeunitn/santiandrea.git"
+  },
+  "author": "Marco Robert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrobeunitn/santiandrea/issues"
+  },
+  "homepage": "https://github.com/mrobeunitn/santiandrea#readme"
+}

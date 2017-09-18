@@ -15,7 +15,7 @@ exports.formatAlbumOutput = function(results,callback){
     var htmloutput= "";
     result = JSON.parse(results);
     for(i = 0 ; i < result.length; i++){
-      htmloutput +=  "<li> <div class='image-container effect'> <img src='"+result[i].path+"'> <div class='mask'>   <h6> <br></h6><h6><br> </h6> <button type='submit' id='album' name='album' value ='1' class='btn btn-default'>Success</button> </div>  </div> </li>";
+      htmloutput +=  "<li> <div class='image-container effect'> <img src='"+result[i].path+"'> <div class='mask'>   <h6> <br></h6><h6><br> </h6> <button type='submit' id='album"+i+"' name='album' value ='1' class='btn btn-default'>Success</button> </div>  </div> </li>";
     }
     callback(htmloutput);
     
