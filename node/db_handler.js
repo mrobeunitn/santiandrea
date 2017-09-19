@@ -25,7 +25,7 @@ const results = [];
     // SQL Query > Select Data
    /*async.series([
        function(callback){*/
-           const query = client.query("SELECT * FROM album JOIN image ON (album.id = image.fk_id)  WHERE image.fk_id =  $1",[1]);
+           const query = client.query("SELECT * FROM album JOIN image ON (album.id = image.fk_id)  WHERE image.fk_id =  $1",[albumId]);
         // Stream results back one row at a time
             query.on('row', (row) => {
               results.push(row);
@@ -49,7 +49,7 @@ const results = [];
 
 //home images
 
-var getIndexImages = function(albumId,callback){
+var getIndexImages = function(callback){
 const results = [];
   // Grab data from http request
   // Get a Postgres client from the connection pool

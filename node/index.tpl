@@ -22,7 +22,7 @@
         <div class="container-fluid">
 		<div class="container">
 			<header>
-                <a href="index.html" style="text-decoration:none"><h1>andrea santi</h1></a>
+                <a href="\" style="text-decoration:none"><h1>andrea santi</h1></a>
                     <nav class="navbar navbar-default" style="background-color:white; border:0px; text-align:center;">
                       <div class="container-fluid">
                         <div class="navbar-header" style="text-align:center;">

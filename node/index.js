@@ -7,12 +7,15 @@ var url = require('url');
 var util = require('util');
 var bind = require('bind');
 var path = require('path');
+var bodyParser = require('body-parser')
 //database 
 var outputIndexFormat = require("./scripts/format_output.js");
 var DBmanager = require("./db_handler.js");
 //instantiate express
 var app = express(); 
 
+
+app.use(bodyParser.urlencoded({ extended: false }));
 //listen in a specific port
 app.set('port', (process.env.PORT || 1337));
 
@@ -20,11 +23,10 @@ app.use(express.static(path.join(__dirname, '/public')));
 //create a server
 app.get('/', function(request, response) 
 {
-    //var album = request.body.album;
     var results;
     var outputFormatted;
-    DBmanager.getIndexImages(1,function(data){
-        outputIndexFormat.formatAlbumOutput(data,function(data1){
+    DBmanager.getIndexImages(function(data){
+        outputIndexFormat.formatOutput(data,function(data1){
             bind.toFile('./index.tpl', {
                 html_formatted:data1
             }, function(data) {
@@ -38,10 +40,11 @@ app.get('/', function(request, response)
 //create a server
 app.post('/', function(request, response) 
 {
-	//var album = request.body.album;
+	var album = request.body.album;
+    console.log(album);
     var results;
     var outputFormatted;
-    DBmanager.getImages(1,function(data){
+    DBmanager.getImages(album,function(data){
         outputIndexFormat.formatAlbumOutput(data,function(data1){
             bind.toFile('./album.tpl', {
                 html_formatted:data1
