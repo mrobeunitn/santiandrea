@@ -47,7 +47,48 @@ const results = [];
 }
 
 
+//home images
+
+var getIndexImages = function(albumId,callback){
+const results = [];
+  // Grab data from http request
+  // Get a Postgres client from the connection pool
+
+    var connectionString = {
+        host: 'localhost', // server name or IP address;
+        port: 5432,
+        database: 'andreasanti',
+        user: 'postgres',
+        password: 'postgres'
+    };
+  pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if(err) {
+      done();
+      console.log(err);
+      return res.status(500).json({success: false, data: err});
+    }
+           const query = client.query("SELECT * FROM image WHERE index_im = $1",[true]);
+        // Stream results back one row at a time
+            query.on('row', (row) => {
+              results.push(row);
+            });
+           
+       
+    // After all data is returned, close connection and return results
+            query.on('end', () => {
+              done();
+              stringa = JSON.stringify(results,null,"    ");
+            //  console.log(stringa);
+              callback(stringa);
+            });
+  });
+}
+
+
 exports.getImages = images;
+
+exports.getIndexImages = getIndexImages;
 
 
 

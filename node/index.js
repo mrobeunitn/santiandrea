@@ -23,9 +23,9 @@ app.get('/', function(request, response)
     //var album = request.body.album;
     var results;
     var outputFormatted;
-    DBmanager.getImages(1,function(data){
+    DBmanager.getIndexImages(1,function(data){
         outputIndexFormat.formatAlbumOutput(data,function(data1){
-            bind.toFile('./album.tpl', {
+            bind.toFile('./index.tpl', {
                 html_formatted:data1
             }, function(data) {
                 response.writeHead(200);
