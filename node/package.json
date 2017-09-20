@@ -9,12 +9,16 @@
     "express": "^4.15.3",
     "pg": "^6.2.4",
     "pg-promise": "^5.9.2",
-    "photoswipe": "^4.1.2"
+    "photoswipe": "^4.1.2",
+    "body-parser": "^1.18.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+   "scripts": {
+      "start": "node index.js"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrobeunitn/santiandrea.git"
@@ -25,4 +29,5 @@
     "url": "https://github.com/mrobeunitn/santiandrea/issues"
   },
   "homepage": "https://github.com/mrobeunitn/santiandrea#readme"
+   
 }
